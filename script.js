@@ -1,8 +1,12 @@
+const welcomeScreen = document.getElementById("welcome-screen");
+const gameScreen = document.getElementById("game-screen");
+const startBtn = document.getElementById("start-btn");
+
 const emojiButtons = document.querySelectorAll(".emoji-btn");
 const randomEmojiDisplay = document.getElementById("random-emoji");
 const playAgainBtn = document.getElementById("Play-btn");
 
-// The HTML has no result element, so create one above the Play Again button
+// Create a result message above the Play Again button
 const resultMessage = document.createElement("p");
 resultMessage.id = "result-message";
 playAgainBtn.before(resultMessage);
@@ -10,7 +14,7 @@ playAgainBtn.before(resultMessage);
 const emojis = ["😊", "😂", "😎", "😍", "😡"];
 let randomEmoji;
 
-// Remove the hidden zero-width characters in the HTML so the comparison works
+// Remove hidden zero-width characters so the comparison works
 function clean(text) {
   return text.replace(/\u200B/g, "").trim();
 }
@@ -43,10 +47,16 @@ function resetGame() {
   playAgainBtn.style.display = "none";
 }
 
+function startGame() {
+  welcomeScreen.classList.add("hidden");
+  gameScreen.classList.remove("hidden");
+  resetGame();
+}
+
+startBtn.addEventListener("click", startGame);
+
 emojiButtons.forEach((button) => {
   button.addEventListener("click", handleEmojiGuess);
 });
 
 playAgainBtn.addEventListener("click", resetGame);
-
-resetGame();
