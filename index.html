@@ -1,24 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emoji Gussing Game</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Emoji Gussing Game</h1>
-    <p>Guess which emoji will appear next!!</p>
-    <div id="emoji-options">
-        <button class="emoji-btn">​​😊​​</button>
-        <button class="emoji-btn">😂​</button>
-        <button class="emoji-btn">😎​</button>
-        <button class="emoji-btn">😍​</button>
-        <button class="emoji-btn">😡​</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Guessing Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Welcome screen -->
+    <div id="welcome-screen" class="screen">
+      <div class="welcome-emoji">🎮</div>
+      <h1>Welcome to the Emoji Guessing Game!</h1>
+      <p>
+        A random emoji will appear. Pick the one you think it is. Are you ready?
+      </p>
+      <button id="start-btn" class="btn">Start Game</button>
     </div>
-    <div id="random-emoji" class="emoji-display">​​❓​</div>
 
-    <button id="Play-btn">Play Again</button>
+    <!-- Game screen (hidden until Start Game is clicked) -->
+    <div id="game-screen" class="screen hidden">
+      <h1>Emoji Guessing Game</h1>
+      <p>Guess which emoji will appear next!!</p>
+      <div id="emoji-options">
+        <button class="emoji-btn">😊</button>
+        <button class="emoji-btn">😂</button>
+        <button class="emoji-btn">😎</button>
+        <button class="emoji-btn">😍</button>
+        <button class="emoji-btn">😡</button>
+      </div>
+      <div id="random-emoji" class="emoji-display">❓</div>
+
+      <button id="Play-btn" class="btn">Play Again</button>
+    </div>
+    <footer>Created By Dhruv Rajani.</footer>
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
